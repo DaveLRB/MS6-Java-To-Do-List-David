@@ -11,7 +11,7 @@ public class ToDoList {
         Scanner scan = new Scanner(System.in);
         boolean premiumPlan = false;
         String[] toDoList;
-        ArrayList<String> deletedTasks = new ArrayList<>();
+        ArrayList<String> deletedTasks = new ArrayList<String>();
 
 
         if (!premiumPlan) {
@@ -114,6 +114,7 @@ public class ToDoList {
                 count++;
                 if (toDoList[i].contains(" ✅")) {
                     completedCount++;
+
                 }
             }
         }
@@ -145,6 +146,7 @@ public class ToDoList {
                     toDoList[i] = null;
                 }
             }*/
+
             int currentIndex = 0;
             for (int i = 0; i < toDoList.length; i++) {
                 if (toDoList[i] == null) {
