@@ -73,7 +73,7 @@ public class ToDoList {
                     deleteTask(toDoList, deletedTasks);
                     break;
                 case 7:
-                    retrieveTask(deletedTasks);
+                    retrieveTask(toDoList,deletedTasks);
                     break;
                 case 8:
                     organizeAlphabetically(toDoList);
@@ -338,7 +338,7 @@ public class ToDoList {
         }
     }
 
-    public static void retrieveTask (ArrayList<String> deletedTasks) {
+    public static void retrieveTask (String[] toDoList,ArrayList<String> deletedTasks) {
         Scanner scan = new Scanner(System.in);
         if (deletedTasks.isEmpty()) {
             System.out.println("\u001b[38;5;9mNo deleted tasks to retrieve!\u001b[0m");
@@ -353,6 +353,12 @@ public class ToDoList {
 
             if (userChoiceOfTaskToRetrieve >= 0 && userChoiceOfTaskToRetrieve < deletedTasks.size()) {
                 String retrievedTask = deletedTasks.remove(userChoiceOfTaskToRetrieve);
+                for (int i = 0; i < toDoList.length ; i++) {
+                    if(toDoList[i] == null){
+                        toDoList[i] = retrievedTask;
+                        break;
+                    }
+                }
                 System.out.println("\u001b[38;5;10mRetrieved task: \u001b[38;5;15m" + retrievedTask + "\u001b[38;5;10m\u001b[0m");
             } else {
                 System.out.println("\u001b[38;5;9mInvalid task option!\u001b[0m");
