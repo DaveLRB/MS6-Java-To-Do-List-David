@@ -359,7 +359,7 @@ public class ToDoList {
                         break;
                     }
                 }
-                System.out.println("\u001b[38;5;10mRetrieved task: \u001b[38;5;15m" + retrievedTask + "\u001b[38;5;10m\u001b[0m");
+                System.out.println("\u001b[38;5;10mRetrieved task: \u001b[38;5;15m" + retrievedTask + "\u001b[38;5;10m\u001b[0m" + LocalDate.now() + LocalTime.now());
             } else {
                 System.out.println("\u001b[38;5;9mInvalid task option!\u001b[0m");
             }
